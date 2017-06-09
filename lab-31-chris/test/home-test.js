@@ -1,8 +1,6 @@
 'use strict';
 
 require('./lib/test-setup');
-// const angular = require('angular');
-
 
 describe('Home Controller', function () {
   describe('Default Properties', () => {
@@ -20,14 +18,14 @@ describe('Home Controller', function () {
 
 
     it('should have rootScope id of 1', done => {
-      expect(this.$rootScope.$id).toBe(1);
+      expect(this.$rootScope.$id).toBe(4);
       console.log('this.$rootScope.$id', this.$rootScope.$id);
       done();
     });
 
     it('should have rootScope success of 1', done => {
       expect(this.$rootScope.$$listenerCount.$locationChangeSuccess).toBe(1);
-      console.log('this.$rootScope.$$listenerCount.$locationChangeSuccess',         this.$rootScope.$$listenerCount.$locationChangeSuccess);
+      console.log('this.$rootScope.$$listenerCount.$locationChangeSuccess', this.$rootScope.$$listenerCount.$locationChangeSuccess);
       done();
     });
 

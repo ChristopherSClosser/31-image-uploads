@@ -8,4 +8,5 @@ module.exports = {
   bindings: {
     gallery: '<',
   },
+  // controller: [function]
 };
