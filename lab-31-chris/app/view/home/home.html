@@ -1,13 +1,17 @@
 <section class="home-content">
+  <h2>{{ homeCtrl.user | uppercase }}</h2>
   <h2>{{ homeCtrl.title }}</h2>
   <create-gallery>
-  </create-gallery>
-  <thumbnail-container ng-if="homeCtrl.currentGallery"  gallery="homeCtrl.currentGallery"></thumbnail-container>
+  </create-gallery><br>
+  <!-- <thumbnail-container ng-if="homeCtrl.currentGallery"  gallery="homeCtrl.currentGallery"></thumbnail-container>
+   -->
+  <!-- <input type="text" ng-model="homeCtrl.currentGallery" ng-options="item as item.name for item in homeCtrl.galleries track by item._id"> -->
   <label for="gallery-selection">select the gallery you would<br>like to add pictures to: </label>
   <select
   name="gallery-selection"
   ng-options="item as item.name for item in homeCtrl.galleries track by item._id"
-  ng-model="homeCtrl.currentGallery"></select><hr>
+  ng-model="homeCtrl.currentGallery"></select>
+  <hr>
   <ul class="gallery-item">
     <div>
       <gallery-item ng-repeat="item in homeCtrl.galleries"

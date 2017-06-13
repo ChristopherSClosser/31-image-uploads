@@ -3,16 +3,10 @@
     name="editGalleryForm"
     ng-submit="editGalleryCtrl.updateGallery()"
     novalidate>
-    <fieldset>
-      <label for="name">name</label>
-      <input name="name" type="text" ng-model="editGalleryCtrl.gallery.name">
-    </fieldset>
-    <fieldset>
-      <label for="description">desc</label>
-      <input name="description" type="text" ng-model="editGalleryCtrl.gallery.desc">
-    </fieldset>
-    <!-- <delete-gallery ng-if="deleteGalleryCtrl.showDeleteGallery" gallery="deleteGalleryCtrl.gallery"></delete-gallery> -->
-
+    <label for="name">name: </label>
+    <input name="name" type="text" ng-model="editGalleryCtrl.gallery.name"><br>
+    <label for="description">desc: </label>
+    <input name="description" type="text" ng-model="editGalleryCtrl.gallery.desc"><br>
     <button class="edt-btn"
       type="submit"
       name="submit update"
@@ -20,5 +14,6 @@
   </form>
   <button class="edt-btn"
     ng-click="editGalleryCtrl.deleteGallery()"
-    >delete</button>
+    >delete</button><br>
+  <thumbnail-container></thumbnail-container>
 </section>

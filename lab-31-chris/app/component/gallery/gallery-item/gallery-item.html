@@ -1,4 +1,8 @@
 <li>
+  <h3>{{ galleryItemCtrl.gallery.name | customUppercase }}</h3>
+  <h4>created {{ galleryItemCtrl.daysSince | date : "d" }} days ago</h4>
+  <h4>created: {{ galleryItemCtrl.gallery.created | date }}</h4>
+  <h4>buy this gallery for: {{ galleryItemCtrl.cost | currency : $ : 0}}</h4>
   <div ng-if="!galleryItemCtrl.showEditGallery">
     <ul>
       <li>name: {{ galleryItemCtrl.gallery.name }}</li>
@@ -9,4 +13,9 @@
 
   <edit-gallery ng-if="galleryItemCtrl.showEditGallery" gallery="galleryItemCtrl.gallery"></edit-gallery>
   <a href ng-click="butn = !butn"><button ng-show="!butn" ng-click="galleryItemCtrl.showEditGallery = !galleryItemCtrl.showEditGallery">edit</button></a><hr>
+  <!-- <thumbnail-container ng-if="homeCtrl.currentGallery"  gallery="homeCtrl.currentGallery"></thumbnail-container> -->
+
+  <!-- <div>
+    <thumbnail-container ng-repeat="item in thumbnailContainerCtrl.gallery.pics" pic="item" gallery="galler.gallery"></thumbnail-container>
+  </div> -->
 </li>
