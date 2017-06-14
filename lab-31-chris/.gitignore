@@ -1,7 +1,0 @@
-# Files to ignore
-node_modules/
-build/
-.env
-auth-router-test.js
-notes.js
-coverage
