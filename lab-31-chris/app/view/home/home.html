@@ -11,9 +11,11 @@
   ng-model="homeCtrl.currentGallery"></select><hr>
   <ul class="gallery-item">
     <div>
-      <gallery-item ng-repeat="item in homeCtrl.galleries"
-      currentGallery="homeCtrl.currentGallery"
-      galleries="homeCtrl.galleries" gallery="item"></gallery-item>
+      <uib-accordian>
+        <gallery-item uib-accordian-group class="panel-default" ng-repeat="item in homeCtrl.galleries"
+        currentGallery="homeCtrl.currentGallery"
+        galleries="homeCtrl.galleries" gallery="item"></gallery-item>
+      <uib-accordian>
     </div>
   </ul>
 </section>

@@ -47,6 +47,10 @@ module.exports = {
         use: 'babel-loader',
       },
       {
+        test: /\.css$/,
+        loader:'style-loader',
+      },
+      {
         test: /\.html$/,
         use: 'html-loader',
       },
