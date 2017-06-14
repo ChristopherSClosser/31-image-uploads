@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
+    "heroku-postbuild": "webpack -p --progress",
     "test": "karma start --single-run",
     "lint": "eslint ./",
     "test-watch": "karma start --auto-watch",
