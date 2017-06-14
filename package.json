@@ -15,7 +15,7 @@
     "cover": "npm run test --karma-coverage",
     "build": "webpack",
     "build-watch": "webpack-dev-server --inline --hot",
-    "heroku-postbuild": "webpack -p --progress"
+    "heroku-postbuild": "webpack --progress"
   },
   "repository": {
     "type": "git",
