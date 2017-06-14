@@ -7,7 +7,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "grunt uglify",
     "start": "npm run build",
     "test": "karma start --single-run",
     "lint": "eslint ./",
@@ -15,7 +14,7 @@
     "cover": "npm run test --karma-coverage",
     "build": "webpack",
     "build-watch": "webpack-dev-server --inline --hot",
-    "heroku-postbuild": "webpack --progress"
+    "heroku-postbuild": "webpack"
   },
   "repository": {
     "type": "git",
