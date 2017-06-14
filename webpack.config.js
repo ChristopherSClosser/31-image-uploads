@@ -10,7 +10,7 @@ dotenv.load();
 
 const production = process.env.NODE_ENV === 'production';
 
-const plugins = [
+let plugins = [
   new ExtractTextPlugin('bundle.css'),
   new HTMLPlugin({ template: `${__dirname}/app/index.html` }),
   new webpack.DefinePlugin({
