@@ -9,7 +9,7 @@ const angular = require('angular');
 
 // require('jquery');
 // require('bootstrap');
-// require('angular-ui-bootstrap');
+require('angular-ui-bootstrap');
 // require('bootstrap-css');
 require('angular-touch');
 require('angular-animate');
@@ -17,7 +17,7 @@ require('angular-animate');
 require('ng-file-upload');
 require('@uirouter/angularjs');
 
-const cfgram = angular.module('cfgram', ['ui.router', 'ngFileUpload', 'ngTouch', 'ngAnimate']);
+const cfgram = angular.module('cfgram', ['ui.router', 'ngFileUpload', 'ngTouch', 'ngAnimate', 'ui.bootstrap']);
 
 let context = require.context('./config/', true, /\.js$/);
 console.log(context);
