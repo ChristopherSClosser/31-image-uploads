@@ -3,7 +3,11 @@
 }
 .home-content {
   background-color: #888;
-  margin-left: -29%;
-  width: 100%;
-  margin-right: -29%;
+  width: 84%;
+}
+
+@media (min-width: 960px) {
+  .home-content {
+    width: 50%;
+  }
 }

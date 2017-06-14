@@ -20,10 +20,21 @@ module.exports = function(config) {
     exclude: [
     ],
     preprocessors: {
+      '**/app/*.js': 'coverage',
       'app/entry.js': ['webpack'],
       'test/**/*-test.js': ['webpack'],
     },
-    reporters: ['mocha'],
+    // coverageReporter: {
+    //   instrumenterOptions: {
+    //     istanbul: { noCompact: true },
+    //   },
+    //   type : 'lcov',
+    //   dir : 'coverage/',
+    // },
+    reporters: ['mocha', 'coverage'],
+    // browserConsoleLogOptions: {
+    //   level: 'log',
+    // },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

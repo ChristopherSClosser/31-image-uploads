@@ -23,8 +23,14 @@ describe('Signup Controller', function () {
       });
     });
 
+    afterEach(done => {
+
+
+      done();
+    });
+
     it('should return a token', done => {
-      console.log('this window', this.$rootScope);
+      // console.log('this window', this.$rootScope);
       this.authService.token = null;
       this.$window.localStorage.setItem('token', 'test token');
       this.authService.getToken()
