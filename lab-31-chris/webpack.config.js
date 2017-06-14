@@ -38,7 +38,7 @@ module.exports = {
     path: `${__dirname}/build`,
   },
   plugins,
-  devtool: production ? false : 'source-map',
+  devtool: production,
   module: {
     loaders: [
       {
