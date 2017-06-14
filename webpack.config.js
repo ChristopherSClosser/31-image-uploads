@@ -4,13 +4,13 @@ const dotenv = require('dotenv');
 const webpack = require('webpack');
 const HTMLPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
+// const CleanPlugin = require('clean-webpack-plugin');
 
 dotenv.load();
 
 const production = process.env.NODE_ENV === 'production';
 
-const plugins = [
+let plugins = [
   new ExtractTextPlugin('bundle.css'),
   new HTMLPlugin({ template: `${__dirname}/app/index.html` }),
   new webpack.DefinePlugin({
@@ -19,17 +19,17 @@ const plugins = [
   }),
 ];
 
-if(production) {
-  plugins = plugins.concat([
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: true,
-      compress: {
-        warnings: false,
-      },
-    }),
-    new CleanPlugin(),
-  ]);
-}
+// if(production) {
+//   plugins = plugins.concat([
+//     new webpack.optimize.UglifyJsPlugin({
+//       mangle: true,
+//       compress: {
+//         warnings: false,
+//       },
+//     }),
+//     new CleanPlugin(),
+//   ]);
+// }
 
 module.exports = {
   entry: `${__dirname}/app/entry.js`,
@@ -38,7 +38,7 @@ module.exports = {
     path: `${__dirname}/build`,
   },
   plugins,
-  devtool: production ? false : 'source-map',
+  // devtool: production,
   module: {
     loaders: [
       {
@@ -47,12 +47,24 @@ module.exports = {
         use: 'babel-loader',
       },
       {
+        test: /\.css$/,
+        loader:'style-loader',
+      },
+      {
         test: /\.html$/,
         use: 'html-loader',
       },
       {
         test: /\.(eot|ttf|woff|svg).*/,
         use: 'file-loader',
+      },
+      {
+        test: /\.(woff|ttf|svg|eot).*/,
+        use: 'url-loader?limit=10000&name=image/[hash].[ext]',
+      },
+      {
+        test: /\.(jpg|jpeg|svg|bmp|tiff|gif|png)$/,
+        use: 'url-loader?limit=10000&name=image/[hash].[ext]',
       },
       {
         test: /\.scss$/,

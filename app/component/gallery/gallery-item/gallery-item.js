@@ -13,6 +13,14 @@ module.exports = {
       $log.debug('Gallery Item Controller');
 
       this.showEditGallery = false;
-    };      
+      this.daysSince = new Date() - new Date(this.gallery.created);
+      this.cost = 123.567;
+
+      this.fetchPics = 
+
+      this.deleteGallery = () => {
+        return galleryService.deleteGallery(this.gallery._id);
+      };
+    };
   }],
 };
