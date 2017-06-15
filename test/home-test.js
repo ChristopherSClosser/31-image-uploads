@@ -3,16 +3,21 @@
 require('./lib/test-setup');
 
 describe('Home Controller', function () {
+  beforeEach(done => {
+    angular.mock.module('cfgram');
+    angular.mock.inject(($rootScope, $controller) => {
+      this.homeCtrl = new $controller('HomeController');
+      this.$rootScope = $rootScope;
+      // this.$onInit();
+      done();
+    });
+  });
   describe('Default Properties', () => {
 
-    beforeEach(done => {
-      angular.mock.module('cfgram');
-      angular.mock.inject(($rootScope, $controller) => {
-        this.homeCtrl = new $controller('HomeController');
-        this.$rootScope = $rootScope;
-        done();
-      });
-    });
+    // beforeEach(done => {
+    //   // this.$onInit();
+    //   done();
+    // });
 
     afterEach(() => this.$rootScope.$apply());
 

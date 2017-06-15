@@ -5,12 +5,11 @@ require('./_home.scss');
 module.exports = [
   '$log',
   '$rootScope',
-  '$scope',
   '$window',
   '$location',
   'authService',
   'galleryService',
-  function($log, $rootScope, $scope, $window, $location, authService, galleryService) {
+  function($log, $rootScope, $window, $location, authService, galleryService) {
     this.title = 'Welcome Home';
     this.root = true;
     this.$onInit = () => {
